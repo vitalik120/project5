@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контакти</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+
+        .header {
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 24px;
+            color: #333;
+        }
+
+        .logo img {
+            height: 60px;
+            width: auto;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: center;
+            background-color: #007BFF;
+            padding: 10px 0;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+
+        .navbar a:hover {
+            color: #ffcc00;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input, textarea, button {
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <img src="arrows.png" alt="Логотип">
+        </div>
+        <h1>Контакти</h1>
+    </header>
+
+    <nav class="navbar">
+        <a href="index.html">Проблема</a>
+        <a href="impact.html">Шкода</a>
+        <a href="solutions.html">Зменшення</a>
+        <a href="solution.html">Вирішення</a>
+        <a href="contacts.html">Контакти</a>
+    </nav>
+
+    <div class="container">
+        <p>Якщо у вас є питання або пропозиції, будь ласка, заповніть форму нижче. Ми зв'яжемося з вами найближчим часом!</p>
+        <form action="submit_form.php" method="POST">
+            <label for="name">Ваше ім'я</label>
+            <input type="text" id="name" name="name" placeholder="Введіть ваше ім'я" required>
+
+            <label for="email">Ваш Email</label>
+            <input type="email" id="email" name="email" placeholder="Введіть вашу електронну пошту" required>
+
+            <label for="message">Ваше повідомлення</label>
+            <textarea id="message" name="message" placeholder="Введіть ваше питання або пропозицію" required></textarea>
+
+            <button type="submit">Надіслати</button>
+        </form>
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2024 Відходи електроніки та екологія. Всі права захищені.</p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Накопичення важких металів</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* CSS для слайдера */
+        .slider {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        .slides {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .slide {
+            min-width: 100%;
+            box-sizing: border-box;
+        }
+
+        .slide img {
+            width: 100%;
+            height: auto;
+        }
+
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            padding: 10px;
+            font-size: 18px;
+            cursor: pointer;
+            z-index: 100;
+        }
+
+        .prev {
+            left: 10px;
+        }
+
+        .next {
+            right: 10px;
+        }
+
+        /* Стилі для кнопки повернення назад */
+        .back-button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            text-align: center;
+            display: inline-block;
+            margin-top: 20px;
+        }
+
+        .back-button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>Накопичення важких металів в екосистемах</h1>
+    </header>
+
+    <main class="main">
+        <section class="section">
+            <h2>Проблема накопичення важких металів</h2>
+            <p>
+                Елементи, які містяться в електроніці (такі як арсен, свинець та нікель), з часом потрапляють у навколишнє середовище
+                та можуть накопичуватися в ланцюгах живлення. Цей процес має серйозні наслідки для здоров'я людей, тварин і рослин.
+            </p>
+
+            <h3>Приклади наслідків</h3>
+            <ul>
+                <li>
+                    <strong>Вплив на людей:</strong> 
+                    Потрапляння важких металів у питну воду або їжу може призвести до отруєнь, мутацій і хронічних захворювань.
+                </li>
+                <li>
+                    <strong>Вплив на тварин:</strong> 
+                    Важкі метали накопичуються в рибах, птахах і інших тваринах, викликаючи порушення репродуктивних функцій і загибель.
+                </li>
+                <li>
+                    <strong>Порушення екосистем:</strong> 
+                    Висока концентрація токсичних металів у ґрунтах і водах негативно впливає на рослини, знижуючи їхню життєздатність.
+                </li>
+            </ul>
+
+            <h3>Реальний приклад</h3>
+            <p>
+                У Китаї, регіони поблизу несанкціонованих заводів із переробки електроніки страждають від надзвичайно високого рівня свинцю 
+                у ґрунтах і водах. Це спричиняє серйозні проблеми зі здоров'ям у місцевих жителів, включаючи когнітивні розлади у дітей.
+            </p>
+
+            <!-- Слайдер -->
+            <div class="slider">
+                <div class="slides">
+                    <div class="slide">
+                        <img src="https://naglyad.org/wp-content/uploads/2023/03/shutterstock_2150479909-1280x720-1.jpg" alt="Забруднення важкими металами в ґрунті">
+                    </div>
+                    <div class="slide">
+                        <img src="https://www.rlabel.org/images/elektronikte-(e-atik)-geri-donusum.jpg" alt="Переробка електроніки на несанкціонованих заводах">
+                    </div>
+                    <div class="slide">
+                        <img src="https://static.ukrinform.com/photos/2023_10/thumb_files/630_360_1698776120-264.jpg" alt="Наслідки накопичення важких металів у водах">
+                    </div>
+                </div>
+                <a class="prev" onclick="moveSlide(-1)">&#10094;</a>
+                <a class="next" onclick="moveSlide(1)">&#10095;</a>
+            </div>
+
+            <h3>Що можна зробити?</h3>
+            <p>
+                Щоб уникнути накопичення важких металів у навколишньому середовищі, слід:
+            </p>
+            <ul>
+                <li>Забезпечувати екологічну утилізацію електроніки.</li>
+                <li>Знижувати використання токсичних металів у виробництві.</li>
+                <li>Створювати програми моніторингу стану довкілля в районах переробки відходів.</li>
+            </ul>
+
+            <!-- Кнопка повернення назад -->
+            <button class="back-button" onclick="window.history.back()">Повернутися назад</button>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2024 Відходи електроніки та екологія. Всі права захищені.</p>
+    </footer>
+
+    <script>
+        let slideIndex = 0;
+
+        function showSlide(index) {
+            let slides = document.getElementsByClassName("slide");
+            if (index >= slides.length) {
+                slideIndex = 0;
+            } else if (index < 0) {
+                slideIndex = slides.length - 1;
+            }
+            for (let slide of slides) {
+                slide.style.display = "none";
+            }
+            slides[slideIndex].style.display = "block";
+        }
+
+        function moveSlide(n) {
+            showSlide(slideIndex += n);
+        }
+
+        showSlide(slideIndex);  // Покажіть перший слайд при завантаженні сторінки
+    </script>
+</body>
+</html>

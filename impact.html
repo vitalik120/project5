@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Шкода електронних відходів</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* CSS для лого */
+        .logo {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header class="header" style="background-image: url(https://www.getfix.com.ua/wp-content/uploads/2024/05/lpbatteryweb.jpg); background-repeat: no-repeat; background-size: 100% 100%; height: 500px; position: relative; text-align: center;">
+        <!-- Логотип -->
+        <div class="logo">
+            <img src="arrows.png" alt="Логотип" style="height: 80px; width: auto;">
+        </div>
+        <h1 style="color: black;">Шкода електронних відходів для природи</h1>
+        <p style="color: black;">Електронні відходи є однією з найсерйозніших екологічних проблем сучасності. Вони містять токсичні речовини, які небезпечні для довкілля і здоров'я людей. У цій статті ми розглянемо основні проблеми, пов'язані з електронними відходами, і наведемо приклади їхнього впливу.</p>
+    </header>
+
+    <nav class="navbar">
+        <a href="index.html">Проблема</a>
+        <a href="impact.html">Шкода</a>
+        <a href="solutions.html">Зменшення</a>
+        <a href="solution.html">Вирішення</a>
+        <a href="contacts.html">Контакти</a>
+    </nav>
+
+    <main class="main">
+        <section class="section" id="impact">
+            <h2>Як електронні відходи шкодять екології?</h2>
+            <h3>Виділення токсичних речовин</h3>
+            <p>
+                Електронні пристрої містять такі небезпечні речовини, як свинець, кадмій, ртуть і бромовані вогнегасники. Коли електроніка неправильно утилізується, ці речовини потрапляють у ґрунт і воду, забруднюючи навколишнє середовище. Наприклад, свинець може викликати серйозні неврологічні розлади у дітей.
+            </p>
+            <p>
+                <strong>Приклад:</strong> У регіоні Агбогблоші, Гана, звалище електроніки стало джерелом серйозного забруднення. Вода і ґрунт там містять високі рівні свинцю і ртуті, що впливає на місцеве населення, спричиняючи неврологічні та дихальні захворювання.
+            </p>
+
+            <h3>Забруднення повітря</h3>
+            <p>
+                У багатьох країнах електронні відходи спалюють, щоб вилучити цінні матеріали. Це призводить до виділення небезпечних газів, таких як діоксини та фурани, які викликають серцево-судинні захворювання і рак.
+            </p>
+            <p>
+                <strong>Приклад:</strong> У Китаї багато несанкціонованих переробних заводів спалюють електроніку, що спричиняє значне забруднення повітря і впливає на здоров'я працівників та мешканців прилеглих районів.
+            </p>
+
+            <h3>Накопичення важких металів</h3>
+            <p>
+                Токсичні метали, такі як арсен, свинець і нікель, з часом накопичуються в харчових ланцюгах. Вони потрапляють у воду, споживаються рибами і, зрештою, людьми, спричиняючи отруєння, генетичні мутації та хронічні захворювання.
+            </p>
+            <p>
+                <strong>Приклад:</strong> У районах біля звалищ електроніки спостерігається значне зростання рівня важких металів у воді та рибі, що впливає на здоров'я місцевих жителів.
+            </p>
+
+            <!-- Слайдер -->
+            <div class="slider">
+                <div class="slides">
+                    <div class="slide">
+                        <img src="https://www.rlabel.org/images/e-atik-geri-donusum-ve-geri-kazanim.jpg" alt="Забруднення токсичними речовинами">
+                    </div>
+                    <div class="slide">
+                        <img src="https://i.ytimg.com/vi/vIzx_bjEFzE/hq720.jpg?sqp=-oaymwE7CK4FEIIDSFryq4qpAy0IARUAAAAAGAElAADIQj0AgKJD8AEB-AH-CYAC0AWKAgwIABABGEYgZShGMA8=&rs=AOn4CLBHyMPFbkjF0VaMIJ9alfhjGbXEBA" alt="Спалювання електронних відходів">
+                    </div>
+                    <div class="slide">
+                        <img src="https://ecologiya.com.ua/sites/default/files/styles/new/public/new/18681871_605_4.jpg?itok=nnHKBkje" alt="Накопичення важких металів у воді">
+                    </div>
+                </div>
+                <a class="prev" onclick="moveSlide(-1)">&#10094;</a>
+                <a class="next" onclick="moveSlide(1)">&#10095;</a>
+            </div>
+        </section>
+
+        <section class="section" id="solutions">
+            <h2>Можливі рішення</h2>
+            <ul>
+                <li>Розробка програм переробки електронних відходів.</li>
+                <li>Підвищення обізнаності про правильну утилізацію.</li>
+                <li>Запровадження суворих законів щодо управління електронними відходами.</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2024 Відходи електроніки та екологія. Всі права захищені.</p>
+    </footer>
+
+    <script>
+        let slideIndex = 0;
+
+        function showSlide(index) {
+            let slides = document.getElementsByClassName("slide");
+            if (index >= slides.length) {
+                slideIndex = 0;
+            } else if (index < 0) {
+                slideIndex = slides.length - 1;
+            }
+            for (let slide of slides) {
+                slide.style.display = "none";
+            }
+            slides[slideIndex].style.display = "block";
+        }
+
+        function moveSlide(n) {
+            showSlide(slideIndex += n);
+        }
+
+        showSlide(slideIndex);  // Покажіть перший слайд при завантаженні сторінки
+    </script>
+</body>
+</html>

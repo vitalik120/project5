@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Забруднення повітря</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* CSS для слайдера */
+        .slider {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        .slides {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .slide {
+            min-width: 100%;
+            box-sizing: border-box;
+        }
+
+        .slide img {
+            width: 100%;
+            height: auto;
+        }
+
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            padding: 10px;
+            font-size: 18px;
+            cursor: pointer;
+            z-index: 100;
+        }
+
+        .prev {
+            left: 10px;
+        }
+
+        .next {
+            right: 10px;
+        }
+
+        /* Стилі для кнопки повернення назад */
+        .back-button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            text-align: center;
+            display: inline-block;
+            margin-top: 20px;
+        }
+
+        .back-button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>Забруднення повітря від електронних відходів</h1>
+    </header>
+
+    <main class="main">
+        <section class="section">
+            <h2>Проблема забруднення повітря</h2>
+            <p>
+                Багато електронних відходів, особливо в несанкціонованих переробних заводах, спалюють для вилучення цінних матеріалів.
+                При цьому в атмосферу викидаються небезпечні гази, такі як діоксини та фурани. Ці речовини є надзвичайно токсичними 
+                та можуть мати серйозні наслідки для здоров'я людей і природи.
+            </p>
+
+            <h3>Приклади наслідків</h3>
+            <ul>
+                <li>
+                    <strong>Вплив на здоров'я:</strong> 
+                    Діоксини можуть викликати серцево-судинні захворювання, хвороби дихальної системи та навіть онкологічні хвороби.
+                </li>
+                <li>
+                    <strong>Вплив на довкілля:</strong> 
+                    Токсичні речовини забруднюють повітря, воду і ґрунт, негативно впливаючи на екосистеми.
+                </li>
+                <li>
+                    <strong>Глобальне потепління:</strong> 
+                    Небезпечні гази, що виділяються при спалюванні, сприяють збільшенню парникового ефекту.
+                </li>
+            </ul>
+
+            <h3>Реальний приклад</h3>
+            <p>
+                У Гані, на звалищі Агбогблоші, тисячі тонн електронних відходів з усього світу спалюють для вилучення міді та інших металів.
+                Це призводить до серйозного забруднення навколишнього середовища, а мешканці прилеглих районів страждають від численних
+                захворювань через вдихання токсичних газів.
+            </p>
+
+            <!-- Слайдер -->
+            <div class="slider">
+                <div class="slides">
+                    <div class="slide">
+                        <img src="https://greenpost.ua/upload/news/2023/10/30/54_965x0.jpg?v=1698669799" alt="Електронні відходи на сміттєзвалищі">
+                    </div>
+                    <div class="slide">
+                        <img src="https://ecolog-ua.com/sites/default/files/3_3.jpg" alt="Спалювання електронних відходів">
+                    </div>
+                    <div class="slide">
+                        <img src="https://kor.ill.in.ua/m/610x386/2467893.jpg" alt="Забруднення повітря від спалювання">
+                    </div>
+                </div>
+                <a class="prev" onclick="moveSlide(-1)">&#10094;</a>
+                <a class="next" onclick="moveSlide(1)">&#10095;</a>
+            </div>
+
+            <h3>Що можна зробити?</h3>
+            <p>
+                Щоб зменшити забруднення повітря від електронних відходів, необхідно:
+            </p>
+            <ul>
+                <li>Використовувати ліцензовані переробні заводи.</li>
+                <li>Скорочувати обсяги електронних відходів через ремонт і повторне використання пристроїв.</li>
+                <li>Підтримувати ініціативи з екологічної утилізації електроніки.</li>
+            </ul>
+
+            <!-- Кнопка повернення назад -->
+            <button class="back-button" onclick="window.history.back()">Повернутися назад</button>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2024 Відходи електроніки та екологія. Всі права захищені.</p>
+    </footer>
+
+    <script>
+        let slideIndex = 0;
+
+        function showSlide(index) {
+            let slides = document.getElementsByClassName("slide");
+            if (index >= slides.length) {
+                slideIndex = 0;
+            } else if (index < 0) {
+                slideIndex = slides.length - 1;
+            }
+            for (let slide of slides) {
+                slide.style.display = "none";
+            }
+            slides[slideIndex].style.display = "block";
+        }
+
+        function moveSlide(n) {
+            showSlide(slideIndex += n);
+        }
+
+        showSlide(slideIndex);  // Покажіть перший слайд при завантаженні сторінки
+    </script>
+</body>
+</html>
